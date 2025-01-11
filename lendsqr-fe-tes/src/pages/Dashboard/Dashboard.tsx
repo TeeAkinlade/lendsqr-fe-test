@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Card from "../../components/Card/Card";
 import DashboardLayout from "../../layout";
 import styles from "./Dashboard.module.scss";
@@ -7,7 +6,6 @@ import Icon2 from "../../assets/icons/dashboard/icon (2).png";
 import Icon3 from "../../assets/icons/dashboard/icon (3).png";
 import Icon4 from "../../assets/icons/dashboard/icon (4).png";
 import More from "../../assets/icons/dashboard/ic-more-vert-18px.png";
-import Loader from "../../components/Loader/Loader";
 import Barchart from "../../components/Bar-chart";
 import Piechart from "../../components/Pie-Chart";
 
@@ -34,9 +32,6 @@ const data = [
 
 
 const Dashboard = () => {
-  const [loading, setLoading] = useState<boolean>(true);  
-
-//   if (loading) return <Loader />;
 
   return (
     <DashboardLayout>

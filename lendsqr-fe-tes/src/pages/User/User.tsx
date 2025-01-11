@@ -158,6 +158,7 @@ const User = () => {
     setCurrentPage(1);
   };
 
+  console.log(selectedItem);
   return (
     <DashboardLayout>
       <div className={styles.dashboard}>
