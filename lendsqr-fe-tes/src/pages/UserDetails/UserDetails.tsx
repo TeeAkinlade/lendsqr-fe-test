@@ -45,6 +45,7 @@ const UserDetails = () => {
             for (let i = 0; i < length - prefix.length; i++) {
               result += characters.charAt(Math.floor(Math.random() * characters.length));
             }
+            setLoading(false)
             return result;
         }
 
