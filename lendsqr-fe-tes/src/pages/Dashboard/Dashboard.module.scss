@@ -11,7 +11,6 @@
         padding: 120px 26px 30px 26px;
     }
 
-
     h1{
         font-size: 24px;
         color: #213F7D;
@@ -137,6 +136,10 @@
         }
         .pie{
             margin-left: 40px;
+
+            @include mix.respond-to(sm) {
+                margin-left:0;
+            }
         }
     }
     .lables{

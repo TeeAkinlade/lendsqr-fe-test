@@ -28,7 +28,8 @@
         p{
             padding: 0 10px;
             color: #213F7D;
-            font-weight: 400
+            font-weight: 400;
+            font-size: 14px;
         }
     }
     .sidebarSubHeading{
@@ -125,7 +126,7 @@
   
   .hamburger {
     position: fixed;
-    top: 27px;
+    top: 29px;
     left: 29px;
     z-index: 1100;
     background-color: none;
@@ -148,6 +149,7 @@
     font-weight: 500;
     color: #545F7D;
     border-bottom: 1px solid #f0f0f0;
+
   }
   
   .sectionTitle {

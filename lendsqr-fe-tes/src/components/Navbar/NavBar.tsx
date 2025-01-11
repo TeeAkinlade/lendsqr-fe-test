@@ -28,7 +28,7 @@ const NavBar = () =>{
                 </div>
                 <div className={styles.rightItems}>
                     <p className={styles.docs}>Docs</p>
-                    <div className="">
+                    <div className={styles.notification}>
                         <img src={Notification} alt="search" className={styles.notification} /> 
                     </div>
                     <div className={styles.avater}>

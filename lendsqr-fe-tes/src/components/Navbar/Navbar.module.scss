@@ -87,7 +87,8 @@
     
             @include mix.respond-to(sm) {
                 @include mix.flex-between;
-                margin-right: 0;
+                padding-right: 0px;
+                gap: 12px;
             }
     
             p{
@@ -99,10 +100,18 @@
                 @include mix.respond-to(sm) {
                     display: none;
                     opacity: 0;
-                   }
+                }
             }
-    
-            .notification, .docs{
+                
+                .notification{
+                    cursor: pointer;
+
+                    @include mix.respond-to(sm) {
+                        // padding-right: 10px;
+                    }
+            }
+
+            .doc{
                 cursor: pointer;
             }
     
