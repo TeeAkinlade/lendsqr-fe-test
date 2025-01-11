@@ -1,0 +1,291 @@
+@use '../../styles/abstracts/mixins' as mix;
+@use '../../styles/abstracts/variables' as var;
+
+.dashboard{
+    background-color: rgba(84, 95, 125, 0.03);
+    height: 100%;
+    width: 100%;
+    padding: 130px 40px 30px 40px;
+
+    @include mix.respond-to(sm) {
+        padding: 120px 40px 30px 40px;
+    }
+
+
+    h1{
+        font-size: 24px;
+        color: #213F7D;
+        font-weight: 500;
+        padding: 30px 0;
+        
+    }
+}
+
+.grid{
+    @include mix.grid(20px, 4);
+
+    @include mix.respond-to(sm) {
+        @include mix.grid(20px, 1);
+
+      }
+}
+.barchart{
+    width: 480px;
+    background-color: white;
+    box-shadow: 0 0 10px #0000000A;
+    border-radius: 4px;
+    padding: 20px;
+    
+    @include mix.respond-to(sm) {
+        width: 100%;
+    }
+    p{
+        color: var.$primary-color;
+        font-weight: 600;
+        font-size: 18px;
+        padding-top: 20px;
+        padding-bottom: 60px;
+    }
+}
+.pieContainer{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0 10px #0000000A;
+    border-radius: 4px;
+    padding: 20px;
+
+    @include mix.respond-to(sm) {
+        @include mix.flex-center
+    }
+
+    .user{
+        color: var.$primary-color;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 20px 0;
+    }
+
+    .piechart{
+        width: 280px;
+        // height: 270px;
+        @include mix.respond-to(sm) {
+            width: 280px;
+        }
+        .Ulables{
+            display: none;
+            opacity: 0;
+
+            @include mix.respond-to(sm) {
+                opacity: 1;
+                display: block;
+            }
+            @include mix.respond-to(xs) {
+                opacity: 1;
+                display: block;
+            }
+
+            .Ucontainer{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 10px;
+                padding: 20px 0;
+
+                @include mix.respond-to(sm) {
+                    flex-direction: row;
+                    gap: 6px;
+                }
+                @include mix.respond-to(xs) {
+                    flex-direction: row;
+                    gap: 6px;
+                }
+
+            }
+    
+                .Ulabel{
+                    @include mix.flex-center;
+                    border: 1px solid #E7E7E7;
+                    border-radius: 4px;
+                    gap: 4px;
+                    padding: 4px;
+            
+                    .Ucolor{
+                        height: 10px;
+                        width: 10px;
+                        background-color: #008000;
+                        border-radius:2px;
+                    }
+                    
+                    .Utitle {
+                        font-size: 14px;
+                        color: var.$gray;
+                    }
+                }
+
+                .Ucolor2{
+                    height: 10px;
+                    width: 10px;
+                    background-color:#E4033B;
+                    border-radius: 2px;
+                }
+                .Utitle{
+                    font-size: 14px;
+                    color: var.$gray;
+                    white-space: nowrap;
+                }
+        }
+    }
+    .lables{
+        margin-left: 50px;
+        display: block;
+        opacity: 1;
+
+        @include mix.respond-to(sm) {
+            opacity: 0;
+            display: none;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 20px 0
+        }
+
+            .label{
+                @include mix.flex;
+                border: 1px solid #E7E7E7;
+                border-radius: 4px;
+                gap: 2px;
+                padding: 4px;
+        
+                .color{
+                    height: 10px;
+                    width: 10px;
+                    background-color: #008000;
+                    border-radius:2px;
+                }
+                
+                .title {
+                    font-size: 14px;
+                    color: var.$gray;
+                }
+            }
+    }
+    
+
+    .color2{
+        height: 10px;
+        width: 10px;
+        background-color:#E4033B;
+        border-radius: 2px;
+    }
+    .title{
+        font-size: 14px;
+        color: var.$gray;
+        white-space: nowrap;
+    }
+}
+
+.chart{
+    display: flex;
+    padding-top: 40px;
+    gap: 20px;
+
+    @include mix.respond-to(sm) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.root {
+    background-color: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 40px;
+    overflow-x: auto;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    overflow: visible;
+    box-shadow: 0 0 10px #0000000A;
+
+    @include mix.respond-to(sm) {
+        overflow-x: auto;
+    }
+  
+    .inline {
+      width: 100%;
+      min-width: 100%;
+      text-align: left;
+    }
+    .payment{
+        font-size: 20px;
+        padding: 20px 0 20px 14px;
+        color: var.$secondary-color;
+        font-weight: 600;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: none;
+      border: white;
+  
+      thead {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+  
+        th {
+            white-space: nowrap;
+            padding: 14px 12px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var.$primary-color;
+            position: relative;
+            background-color: rgba(84, 95, 125, 0.06);
+          
+            &:first-child {
+              padding-left: 16px;
+            }
+          
+            &:last-child {
+              padding-right: 16px;
+            }
+
+            img{
+                margin-left: 8px;
+                padding: 1px;
+                width: 13px;
+                cursor: pointer;
+            }
+            .filterComponent{
+                position: absolute;
+                top: 40px;
+                z-index: 90;
+            }
+        }          
+      }
+  
+      tbody {
+        tr {
+            white-space: nowrap;
+          &:hover {
+            background-color: rgba(84, 95, 125, 0.03);
+          }
+        }
+  
+        td {
+          padding: 12px 16px;
+          color: #545F7D;
+          font-size: 14px;
+          font-weight: 400;
+          border-bottom: 1px solid #e5e7eb;
+        }
+      }
+    }
+  }

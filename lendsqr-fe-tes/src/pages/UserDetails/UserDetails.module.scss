@@ -1,0 +1,323 @@
+@use '../../styles/abstracts/mixins' as mix;
+@use '../../styles/abstracts/variables' as var;
+
+section{
+    background-color: rgba(84, 95, 125, 0.03);
+    height: 100%;
+    width: 100%;
+    padding: 130px 40px 30px 40px;
+
+    @include mix.respond-to(sm) {
+        padding: 120px 40px 30px 40px;
+    }
+
+    .users{
+        padding: 30px 0;
+        span{
+            font-size: 16px;
+            color: var.$gray;
+            font-weight: 400;
+            margin-left: 12px;
+        }
+
+        img{
+            cursor: pointer;
+        }
+    }
+    h1{
+        font-weight: 500;
+        font-size: 24px;
+        color: var.$primary-color;
+        align-items: start;
+
+        @include mix.respond-to(sm) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .details{
+        @include mix.flex-btw;
+
+        @include mix.respond-to(sm) {
+            display: flex;
+            flex-direction: column;
+          }
+
+        .buttons{
+            @include mix.flex-center(20px);
+
+            @include mix.respond-to(sm) {
+                @include mix.flex-btw
+            }
+    
+            button{
+                padding: 12px 24px;
+                outline: none;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                border-radius: 8px;
+                letter-spacing: 0.6px;
+                cursor: pointer;
+                &:hover{
+                    background: #FFF;
+                }
+
+                @include mix.respond-to(sm) {
+                    font-size: 12px;
+                    padding: 12px;
+                }
+            }
+            .blackList {
+                border: 1px solid #E4033B;
+                color: #E4033B;
+            }
+
+            .activate {
+                border: 1px var.$secondary-color solid;
+                color: var.$secondary-color;
+            }
+        }
+
+    }
+    .subContainer{
+        background-color: white;
+        margin-top: 40px;
+        padding: 30px 30px 0 30px;
+        border-radius: 4px;
+        box-shadow: 0 10px 10px #0000000A;
+        @include mix.respond-to(sm) {
+            padding: 10px 10px 0 10px;
+        }
+
+        .info{
+            @include mix.flex;
+
+            @include mix.respond-to(sm) {
+                @include mix.flex-center;
+                flex-direction:column;
+            }
+    
+            .avatar{
+                @include mix.flex;
+
+                @include mix.respond-to(sm) {
+                    gap: 55px;
+                }
+            }
+    
+            img{
+                width: 100px;
+            }
+    
+            .avatarInfo{
+                margin-left: 30px;
+                @include mix.respond-to(sm) {
+                    margin-left: 0;
+                }
+                
+                h1{
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: var.$primary-color;
+
+                    @include mix.respond-to(sm) {
+                        margin-bottom: 10px;
+                      }
+                }
+    
+                p{
+                    font-size: 14px;
+                    color: var.$gray;
+                    padding-top: 8px;
+
+                    @include mix.respond-to(sm) {
+                        padding-top: 4px;
+                    }
+                }
+            }
+    
+            .line{
+                height: 100px;
+                width: 1px;
+                border: none;
+                background-color: rgba(84, 95, 125, 0.2);
+                opacity: 0.2;
+                margin: 0 40px;
+                display: block;
+                opacity: 1;
+
+                @include mix.respond-to(sm) {
+                    display: none;
+                    opacity: 0;
+                }
+            }
+
+            .flex{
+                @include mix.flex-center;
+
+                @include mix.respond-to(sm) {
+                    @include mix.flex-center(45px);
+                    margin-top: 20px;
+            }
+
+                .stars{
+                    @include mix.flex-center;
+                }
+            }
+    
+            .tier{
+                 p{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: var.$gray;
+                 }
+
+                 .flex{
+                    @include mix.flex
+                 }
+    
+                 img{
+                    width: 16px;
+                    margin-right: 4px;
+                    padding-top: 8px;
+
+                    @include mix.respond-to(sm) {
+                        @include mix.flex-center
+                    }
+                 }
+            }
+    
+            .account{
+                h3{
+                    font-size: 22px;
+                    color: var.$primary-color;
+                    font-weight: 500;
+                }
+    
+                p{
+                    color: var.$primary-color;
+                    font-weight: 400;
+                    font-size: 12px;
+                    padding-top: 8px;
+                }
+            }
+    
+        }
+    }
+    
+    .list {
+        @include mix.flex-between;
+        margin-top: 60px;
+
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 80%;
+            text-decoration: underline;
+            text-underline-offset:10px;
+            cursor: pointer;
+        }
+          .tabs {
+            @include mix.flex-between;
+
+            @include mix.respond-to(sm) {
+                overflow-x: auto;
+                button{
+                    font-size: 14px;
+                    white-space: nowrap;
+                }
+            }
+          }
+          
+          .tabItem {
+            padding: 10px 24px;
+            text-align: center;
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+          }
+          
+          .tabItem.active {
+            color: #00c3ff;
+            border-bottom: 2px solid #00c3ff;
+            font-weight: 400;
+
+            @include mix.respond-to(sm) {
+                padding: 4px;
+            }
+          }
+          
+          .tabItem:hover {
+            color: rgba(0, 0, 0, 0.9);
+          }
+          .tabItem.active:hover {
+            color: #00c3ff;
+          }
+          
+          .tabContent {
+            padding: 20px;
+            font-size: 14px;
+            color: #333;
+          }
+          
+    }
+
+    .wrapper{
+        background-color: white;
+        margin-top: 40px;
+        padding: 30px;
+        border-radius: 4px;
+        box-shadow: 0 10px 10px #0000000A;
+
+        .grid{
+            @include mix.flex;
+            white-space: nowrap;
+            flex-wrap: wrap;
+            gap: 40px 80px;
+
+
+        }
+
+        .personalInfo h3, .employment h3, .social h3, .guarantor h3{
+            font-size: 16px;
+            font-weight: 500;
+            color: var.$primary-color;
+            text-transform: capitalize;
+            margin: 20px 0;
+
+        }
+        h4{
+            font-size: 12px;
+            font-weight: 400;
+            color: var.$gray;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 14px;
+            font-weight: 500;
+            color: var.$gray;
+            text-transform: capitalize;
+            padding-top: 4px;
+        }
+
+        .line2{
+            height: 1px;
+            width: 100%;
+            border: none;
+            background-color: var.$gray;
+            opacity: 0.2;
+            margin: 20px 0 ;
+
+        }
+
+    }
+    .none{
+        color: white;
+        padding: 10px 0;
+    }
+}

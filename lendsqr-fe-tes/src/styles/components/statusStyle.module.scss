@@ -1,0 +1,34 @@
+.statusCell {
+    font-size: 12;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 70px;
+    border-right: 100%;
+    display: inline-block;
+    width: fit;
+    white-space: nowrap;
+    padding: 5px 12px;
+    cursor: pointer;
+  
+    &[data-status='Inactive'] {
+      background-color: rgba(84, 95, 125, 0.06);
+      color: #545F7D;
+    }
+  
+    &[data-status='Pending'] {
+        background-color: rgba(233, 178, 0, 0.1);
+        color: #E9B200;
+    }
+  
+    &[data-status='Blacklisted'] {
+      background-color: rgba(228, 3, 59, 0.1);
+      color: #E4033B;
+    }
+  
+    &[data-status='Active'] {
+      background-color: rgba(57, 205, 98, 0.06);
+      color: #39CD62;
+    }
+  }
+  

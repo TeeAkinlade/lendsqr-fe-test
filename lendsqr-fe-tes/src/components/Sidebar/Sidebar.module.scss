@@ -1,0 +1,225 @@
+@use '../../styles/abstracts/mixins' as mix;
+@use '../../styles/abstracts/variables' as *;
+
+.sidebar{
+    padding: 130px 0 20px 0;
+    margin-top: 10px;
+    z-index: 80;
+    background-color: white;
+    width: 360px;
+    display: block;
+    opacity: 1;
+
+    @include mix.respond-to(sm) {
+        display: "none";
+        opacity: 0;
+        padding: 0;
+        width: 0;
+
+      }
+
+    .sidebarHeading{
+        @include mix.flex;
+        margin-bottom: 40px;
+        padding-left: 40px;
+        cursor: pointer;
+
+
+        p{
+            padding: 0 10px;
+            color: #213F7D;
+            font-weight: 400
+        }
+    }
+    .sidebarSubHeading{
+        @include mix.flex;
+        padding-left: 40px;
+
+        p{
+            padding: 0 10px;
+            color: rgba(33, 63, 125, 0.6);
+            font-weight: 400;
+        }
+    }
+    h2{
+        margin-top: 40px;
+        padding-left: 40px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #545F7D;
+    }
+
+    ul {
+        text-decoration: none;
+        list-style: none;
+    }
+     a{
+        text-decoration: none
+    }
+    .menuItems {
+        @include mix.flex;
+        padding-left: 40px;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: rgba(33, 63, 125, 0.6);
+        cursor: pointer;
+        
+        p{
+            padding-left: 10px;
+        }
+
+        &.active {
+          background-color: rgba(57, 205, 204, 0.06);
+          border-left: 4px solid $secondary-color;
+          border-radius: 3px;
+          font-weight: 400;
+          color: #213F7D
+        }
+
+        &.active:hover{
+            background-color: rgba(57, 205, 204, 0.06);
+        }
+      
+        &:hover {
+            background-color: rgba(57, 205, 204, 0.03);
+            backdrop-filter: blur(10px);
+        }
+        img{
+            opacity: 0.6;
+        }
+
+        &.active img{
+            opacity: 1;
+        }
+    }
+    
+}
+// ....................nav .hamburger .......................
+.sidebars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  
+    &.open {
+      transform: translateX(0);
+    }
+  
+    &.closed {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .hamburger {
+    position: fixed;
+    top: 27px;
+    left: 29px;
+    z-index: 1100;
+    background-color: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  
+  .sidebarHeadings {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #545F7D;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .sectionTitle {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #545F7D;
+  
+    &:hover {
+      background-color: #f9f9f9;
+    }
+  }
+  
+  .subMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  
+    &.expanded {
+      max-height: 300px;
+    }
+  }
+  
+  .menuItems {
+    @include mix.flex;
+        padding-left: 40px;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 14px;
+        color: rgba(33, 63, 125, 0.6);
+        font-size: 14px;
+        cursor: pointer;
+        
+        p{
+            padding-left: 10px;
+        }
+
+        &.active {
+          background-color: rgba(57, 205, 204, 0.06);
+          border-left: 4px solid $secondary-color;
+          border-radius: 3px;
+          font-weight: 400;
+          color: #213F7D
+        }
+
+        &.active:hover{
+            background-color: rgba(57, 205, 204, 0.06);
+        }
+      
+        &:hover {
+            background-color: rgba(57, 205, 204, 0.03);
+            backdrop-filter: blur(10px);
+        }
+        img{
+            opacity: 0.6;
+        }
+
+        &.active img{
+            opacity: 1;
+        }
+  }
+  
+

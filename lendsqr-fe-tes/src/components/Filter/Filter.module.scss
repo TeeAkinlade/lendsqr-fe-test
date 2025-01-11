@@ -1,0 +1,61 @@
+@use '../../styles/abstracts/variables' as var;
+@use '../../styles/abstracts/mixins' as *;
+
+form{
+    padding: 14px;
+    box-shadow: 0 0 10px #0000000A;
+    background-color: white;
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        input{
+            border: var.$border-color solid 1px;
+            width: 100%;
+            border-radius: 4px;
+            padding: 10px 16px;
+            outline: none;
+        }
+        
+        label{
+            color: #545F7D;
+            font-weight: 500;
+            font-size: 12px;
+            text-transform: capitalize;
+            padding-top: 10px;
+            
+        }
+    }
+    .buttons {
+        @include flex;
+        margin-top: 30px;
+        gap: 20px;
+    }
+    button{
+        padding:10px 14px;
+        border-radius: 6px;
+        outline: none;
+        border: #545F7D 1px solid;
+        color: #545F7D;
+        background-color: white;
+        cursor: pointer;
+
+        &:hover{
+            background-color: #f1f3f7;
+            opacity: 0.8;
+        }
+    }
+    .filter{
+        background-color: var.$secondary-color;
+        color: white;
+        border: var.$secondary-color 1px solid;
+        padding: 10px 20px;
+
+        &:hover{
+            background-color: var.$secondary-color;
+            opacity: 0.8;
+        }
+    }
+}

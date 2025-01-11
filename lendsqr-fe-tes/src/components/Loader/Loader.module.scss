@@ -1,0 +1,13 @@
+@use '../../styles//abstracts/mixins' as *;
+
+.loader{
+    @include flex-center;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+
+    img{
+        width: 100px;
+        height: 100px;
+    }
+}

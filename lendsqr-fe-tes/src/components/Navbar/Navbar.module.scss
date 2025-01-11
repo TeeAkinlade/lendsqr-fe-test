@@ -1,0 +1,147 @@
+@use '../../styles/abstracts/mixins' as mix;
+@use '../../styles/abstracts/variables' as *;
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    .navbar{
+        @include mix.flex-between;
+        width: 100%;
+        padding: 24px 40px;
+        box-shadow: 0 4px 4px #0000000A;
+        background-color: white;
+        z-index: 100;
+    
+        @include mix.respond-to(sm) {
+            padding: 24px 24px 24px 80px;
+        }
+    
+        .leftItems{
+            @include mix.flex-center(80px);
+        }
+        .logo{
+            width:130px
+        }
+        .search{
+            @include mix.flex;
+    
+            input{
+               border: $border-color solid 1px;
+               border-bottom-left-radius: 8px;
+               border-top-left-radius: 8px;
+               color: #545F7D;
+               font-size: 12px;
+               padding: 11px 16px;
+               width: 300px;
+               letter-spacing: 0.6px;
+               outline: none;
+               display: block;
+               opacity: 1;
+    
+               &::placeholder{
+                color: $gray
+               }
+    
+               @include mix.respond-to(sm) {
+                display: none;
+                opacity: 0;
+                width: 0;
+               }
+           }
+    
+           .searchButton{
+                background-color: $buttonBackground-color;
+                height: 100%;
+                padding: 11 px 24px;
+                border-bottom-right-radius: 6px;
+                border-top-right-radius: 6px;
+                outline: none;
+                cursor: pointer;
+                display: block;
+                opacity: 1;
+    
+                @include mix.respond-to(sm) {
+                    display: none;
+                    opacity: 0;
+                   }
+    
+                .searchIcon{
+                    margin-top: 2px;
+                    display: block;
+                    opacity: 1;
+    
+                    @include mix.respond-to(sm) {
+                        display: none;
+                        opacity: 0;
+                       }
+                }
+           }
+        }
+        .rightItems {
+            @include mix.flex-center(40px);
+            margin-right: 20px;
+            color: $primary-color;
+    
+            @include mix.respond-to(sm) {
+                @include mix.flex-between;
+                margin-right: 0;
+            }
+    
+            p{
+                text-decoration: underline;
+                font-weight: 400;
+                display: block;
+                opacity: 1;
+    
+                @include mix.respond-to(sm) {
+                    display: none;
+                    opacity: 0;
+                   }
+            }
+    
+            .notification, .docs{
+                cursor: pointer;
+            }
+    
+        }
+    
+        .avater{
+            @include mix.flex-center(20px);
+    
+            @include mix.respond-to(sm) {
+                @include mix.flex-center;
+            }
+    
+            .profileMenu{
+                @include mix.flex-center(10px);
+                cursor: pointer;
+    
+                p{
+                    font-weight: 500;
+                    text-decoration: none;
+                }
+                .dropdown{
+                    
+                    @include mix.respond-to(sm) {
+                        display: none;
+                        opacity: 0;
+                       }
+                }
+            }
+        }
+    
+    }
+}
+
+.hamburgerIcon{
+    display: none;
+    opacity: 0;
+
+    @include mix.respond-to(sm) {
+        display: block;
+        opacity: 1;
+       }
+}

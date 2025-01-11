@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans";
+}
+  
+/* width */
+::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+
+/* track */
+::-webkit-scrollbar-track{
+  background: #F1F1F1;
+}
+
+/* handle */
+::-webkit-scrollbar-thumb{
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle hover */
+
+::-webkit-scrollbar-thumb:hover{
+  background: #555;
+}
