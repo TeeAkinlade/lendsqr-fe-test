@@ -61,7 +61,9 @@ const Piechart: React.FC = () => {
               </div>
           </div>
        </div>
-        <Pie data={data} options={options} />
+       <div className={styles.pie}>
+          <Pie data={data} options={options} />
+       </div>
       </div>
       <div className={styles.lables}>
         <div className={styles.container}>
