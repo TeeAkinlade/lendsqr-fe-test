@@ -1,7 +1,7 @@
 import React from 'react';
 import SideBar from '../components/Sidebar/SideBar';
 import NavBar from '../components/Navbar/NavBar';
-import styles from './index.module.scss';
+import styles from './Index.module.scss';
 
 
 type DashboardLayoutProps = {
